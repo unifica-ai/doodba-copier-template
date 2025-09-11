@@ -17,7 +17,27 @@
 {%- endif %}
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
 
-# {{ project_name }} - a Doodba deployment
+# {{ project_name }}
+
+## Developing
+
+Build images and launch in development mode:
+
+```
+inv develop
+inv img-build --pull
+inv git-aggregate
+```
+
+Install modules:
+
+```
+docker compose -f devel.yaml run --rm odoo --stop-after-init -i base,crm,aly_ui,website_odoo_debranding,portal_odoo_debranding,remove_odoo_enterprise,disable_odoo_online,aly_base
+```
+
+Load `localhost:16069` and log in as `admin` : `admin`
+
+## Doodba
 
 This project is a Doodba scaffolding. Check upstream docs on the matter:
 
