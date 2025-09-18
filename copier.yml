@@ -96,6 +96,11 @@ _migrations:
         - "{{ _copier_conf.answers_file }}"
 
 # Questions for the user
+stack_name:
+  help: What is the name of this stack? (Usually the customer name.)
+  type: str
+  default: cliente-x
+
 odoo_version:
   help: On which odoo version is it based?
   type: float
